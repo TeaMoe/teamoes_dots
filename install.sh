@@ -74,6 +74,14 @@ elif [ -f $ZSHRC ]; then
     mv $ZSHRC $ZSHRC.old
 fi
 
+if [ -L $ZSHFILES ]; then
+    echo "$ZSHFILES exists and is a symbolic link.. removing.."
+    rm $ZSHFILES
+elif [ -d $ZSHFILES ]; then
+    echo "$ZSHFILES exists.. renaming to $ZSHFILES.old"
+    mv $ZSHFILES $ZSHFILES.old
+fi
+
 echo "creating symbolic link $ZSHRC .."
 ln -s $DOTS_HOME/oh-my-zsh $ZSHFILES
 
@@ -83,7 +91,8 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 echo "Copying your current PATH and adding it to the end of ~/.zshrc for you."
 echo "export PATH=$PATH" >> ~/.zshrc
 
-ln -s $ZSH_GIT_FUNCTIONS/* $ZSHFILES/custom/*
+ln -s $ZSH_GIT_FUNCTIONS/zgitinit $ZSHFILES/functions/
+ln -s $ZSH_GIT_FUNCTIONS/prompt_wunjo_setup $ZSHFILES/custom/
 
 echo "Time to change your default shell to zsh!"
 chsh -s /usr/bin/zsh
