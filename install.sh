@@ -9,7 +9,7 @@ DOT_VIM=$HOME/.vim
 ZSHRC=$HOME/.zshrc
 ZSHFILES=$HOME/.oh-my-zsh
 ZSH_PACKAGE="zsh"
-ZSH_GIT_FUNCTIONS=$HOME/zsh-git/functions
+ZSH_GIT_FUNCTIONS=$DOTS_HOME/zsh-git/functions
 
 if [ "$1" = "-nox" ]; then
     VIM_PACKAGE="vim-nox"
