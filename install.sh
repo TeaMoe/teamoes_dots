@@ -92,7 +92,7 @@ echo "Copying your current PATH and adding it to the end of ~/.zshrc for you."
 echo "export PATH=$PATH" >> ~/.zshrc
 
 ln -s $ZSH_GIT_FUNCTIONS/zgitinit $ZSHFILES/functions/
-ln -s $ZSH_GIT_FUNCTIONS/prompt_wunjo_setup $ZSHFILES/custom/
+ln -s $ZSH_GIT_FUNCTIONS/prompt_wunjo_setup $ZSHFILES/custom/prompt_wunjo_setup.zsh
 
 echo "Time to change your default shell to zsh!"
 chsh -s /usr/bin/zsh
